@@ -1,11 +1,19 @@
 <?php
 
-require 'vendor/autoload.php';
+use App\Actions\FetchCodeFromMzvSiteAction;
+use App\Client\MzvClient;
+use App\Repositories\MzvCodeRepository;
+use App\Support\HtmlParser;
 
-use Application\Application;
+$config = require __DIR__ . '/bootstrap.php';
 
-$application = new Application();
+$client = new MzvClient($config['client'], $config['cookieJar']);
+$parser = new HtmlParser();
+$repository = new MzvCodeRepository($client, $parser);
 
-$code = $application->getCode();
+$action = new FetchCodeFromMzvSiteAction($repository);
 
-var_dump($code);
+$response = $action->handle();
+
+header('Content-Type: application/json');
+echo json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);

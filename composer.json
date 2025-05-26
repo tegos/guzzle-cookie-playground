@@ -1,13 +1,13 @@
 {
-  "license": "MIT",
-  "description": "guzzle-cookie-example",
   "require": {
-    "guzzlehttp/guzzle": "~6.0",
-    "sunra/php-simple-html-dom-parser": "^1.5"
+    "guzzlehttp/guzzle": "^7.0",
+    "symfony/dom-crawler": "^6.0",
+    "symfony/css-selector": "^6.0",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
-      "Application\\": "application/"
+      "App\\": "app/"
     }
   }
 }
