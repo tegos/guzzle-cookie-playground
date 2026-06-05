@@ -49,6 +49,7 @@ To work around this, we simulate the browser behavior with the following steps:
 
 * **Guzzle** – HTTP client for making requests
 * **symfony/dom-crawler** – For parsing HTML and extracting data
+* **PHPUnit** – Unit testing
 * **Composer** – Dependency management
 * **Docker** – For running the project in an isolated environment
 
@@ -85,6 +86,12 @@ You will receive a JSON response like:
   "success": true,
   "code": "G6D1S8G8"
 }
+```
+
+## Testing
+
+```bash
+vendor/bin/phpunit
 ```
 
 ## Example Output

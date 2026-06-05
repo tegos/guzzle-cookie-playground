@@ -9,7 +9,7 @@ $config = require __DIR__ . '/bootstrap.php';
 
 $client = new MzvClient($config['client'], $config['cookieJar']);
 $parser = new HtmlParser();
-$repository = new MzvCodeRepository($client, $parser);
+$repository = new MzvCodeRepository($client, $parser, $config['target_url']);
 
 $action = new FetchCodeFromMzvSiteAction($repository);
 

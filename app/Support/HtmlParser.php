@@ -24,10 +24,8 @@ final class HtmlParser
 
     private function cleanText(string $text): string
     {
-        // Replace non-breaking spaces (unicode \xA0 and HTML entity &nbsp;)
-        $text = str_replace("\xC2\xA0", ' ', $text); // UTF-8 encoded nbsp
-        $text = preg_replace('/\x{00A0}/u', ' ', $text); // Unicode NBSP
-        $text = preg_replace('/[[:space:]]+/', ' ', $text); // Normalize spacing
+        $text = preg_replace('/\x{00A0}/u', ' ', $text);
+        $text = preg_replace('/[[:space:]]+/', ' ', $text);
 
         return trim($text);
     }
