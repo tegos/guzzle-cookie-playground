@@ -11,7 +11,7 @@ logic.
 We target this real-world [article code](https://www.mzv.cz/lvov/uk/x2004_02_03/x2016_05_18/x2017_11_24_1.html), which
 displays a registration code after passing a client-side JavaScript protection step.
 
-![Registration Code Page](readme/page.jpg)
+![Registration Code Page](assets/page.jpg)
 
 ## Overview
 
@@ -96,7 +96,7 @@ vendor/bin/phpunit
 
 ## Example Output
 
-![JSON Response](readme/response-json.png)
+![JSON Response](assets/response-json.png)
 
 ## Disclaimer
 
